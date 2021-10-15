@@ -25,13 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install k6
+        run: |
+          curl https://github.com/loadimpact/k6/releases/download/v0.26.2/k6-v0.26.2-linux64.tar.gz -L | tar xvz --strip-components 1
+      - name: Start server and run tests
+        run: |
+          npm start & npx wait-on http://localhost:3000
+          ./k6 run --out json=my_test_result.json k6Performance.js
       # Runs k6 performance tests
-      - name: Run local k6 test
-        continue-on-error: true
-        uses: k6io/action@v0.1
-        with:
-          filename: k6Performance.js
-          flags: --out json=my_test_result.json
+      #- name: Run local k6 test
+      #  continue-on-error: true
+      #  uses: k6io/action@v0.1
+      #  with:
+      #    filename: k6Performance.js
+      #    flags: --out json=my_test_result.json
 
       # Import results back to Xray (Server and Cloud)
       - name: "Import results to Xray (server/DC)"
