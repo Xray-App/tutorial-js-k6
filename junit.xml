@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<testsuites tests="3" failures="1">
+<testsuite name="k6 thresholds" tests="3" failures="1"><testcase name="http_req_duration - p(90)&lt;500" />
+<testcase name="http_req_failed - rate&lt;0.01" />
+<testcase name="http_reqs - rate&lt;100"><failure message="failed" /></testcase>
+</testsuite >
+</testsuites >
