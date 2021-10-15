@@ -27,6 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run local k6 test
+        continue-on-error: true
         uses: k6io/action@v0.1
         with:
           filename: k6Performance.js
