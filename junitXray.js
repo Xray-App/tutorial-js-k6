@@ -59,7 +59,7 @@ var replacements = {
   
   function addEvidence(fileName, fileEvidence){
     var item = '';
-    if(fileName & fileEvidence){
+    if(fileName && fileEvidence){
       item = '<item name="'+ fileName +'">' +
       fileEvidence +
       '</item>';
