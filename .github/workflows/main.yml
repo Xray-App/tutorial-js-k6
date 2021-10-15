@@ -39,7 +39,11 @@ jobs:
       #  with:
       #    filename: k6Performance.js
       #    flags: --out json=my_test_result.json
-
+      
+      # Debug generated file
+      - name: debug Xray xml report
+        run: cat xrayJunit.xml
+        
       # Import results back to Xray (Server and Cloud)
       - name: "Import results to Xray (server/DC)"
         uses: mikepenz/xray-action@v2.0.0
