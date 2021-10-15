@@ -25,12 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # Runs k6 performance tests
       - name: Run local k6 test
         continue-on-error: true
         uses: k6io/action@v0.1
         with:
           filename: k6Performance.js
+          flags: --out json=my_test_result.json
 
       # Import results back to Xray (Server and Cloud)
       - name: "Import results to Xray (server/DC)"
