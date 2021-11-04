@@ -1,4 +1,4 @@
-# tutorial-python-locust
+# tutorial-js-k6
 
 [![build workflow](https://github.com/Xray-App/tutorial-js-k6/actions/workflows/main.yml/badge.svg)](https://github.com/Xray-App/tutorial-js-k6/actions/workflows/main.yml)
 [![license](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
